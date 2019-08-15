@@ -13,18 +13,46 @@ public class SortedDictionary {
     }
 
 
+    public String formattedOut() {
+        StringBuilder stringBuilder = new StringBuilder();
+        dictionary.forEach(obj -> {
+            if (obj.getLength() <= 1) {
+                return;
+            }
+            if (obj.equals(dictionary.first())) {
+                stringBuilder.append(obj);
+                return;
+            }
+            stringBuilder.append("," + obj);
+        });
+        return "[" + stringBuilder + "]";
+    }
+
+
     public void setDictionary(List<String> tokens) {
         tokens.forEach(token -> {
-            if(dictionary.contains(new SortedWords(token.charAt(0)))){
+            if (dictionary.contains(new SortedWords(token.charAt(0)))) {
                 dictionary.floor(new SortedWords(token.charAt(0))).addWord(token);
                 return;
             }
-            System.out.println(token);
             dictionary.add(new SortedWords(token));
         });
     }
 
     public SortedSet<SortedWords> getDictionary() {
         return dictionary;
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder stringBuilder = new StringBuilder();
+        dictionary.forEach(obj -> {
+            if (obj.equals(dictionary.last())) {
+                stringBuilder.append(obj);
+                return;
+            }
+            stringBuilder.append(obj + ",");
+        });
+        return "[" + stringBuilder + "]";
     }
 }

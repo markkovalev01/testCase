@@ -6,14 +6,8 @@ import java.util.StringTokenizer;
 
 public class StringProcessor {
 
-//    private static String tokens = " ";
     private static StringTokenizer stringTokenizer;
 
-
-//    public static void setTokens(String tokens){
-////        StringProcessor.tokens = tokens;
-////        stringTokenizer = new
-//    }
 
     public static List<String> processString(String string, String delim){
         stringTokenizer = new StringTokenizer(string, delim);

@@ -32,6 +32,10 @@ public class SortedWords implements Comparable {
         return words;
     }
 
+    public int getLength(){
+        return words.size();
+    }
+
 
     @Override
     public boolean equals(Object obj) {
