@@ -1,3 +1,5 @@
+import lib.SortedWords;
+
 import java.util.*;
 
 public class SortedLettersSet implements SortedSet {

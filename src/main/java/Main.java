@@ -1,14 +1,15 @@
-import java.util.SortedSet;
-import java.util.TreeSet;
+import lib.SortedDictionary;
+import lib.StringProcessor;
+
+import java.util.List;
 
 public class Main {
-
     public static void main(String[] args) {
-        SortedSet<SortedWords> sortedWords = new TreeSet<>();
-        sortedWords.add(new SortedWords('б'));
-        sortedWords.add(new SortedWords('a'));
-        sortedWords.add(new SortedWords('д'));
-        sortedWords.add(new SortedWords('г'));
-        sortedWords.forEach(let -> System.out.println(let));
+        List<String> list = StringProcessor.processString("сапог сарай арбуз болт бокс биржа абрикос"," ");
+//        System.out.println(list.getClass().getName());
+//        list.forEach(obj -> System.out.println(obj));
+        SortedDictionary sortedDictionary = new SortedDictionary();
+        sortedDictionary.setDictionary(list);
+        sortedDictionary.getDictionary().forEach(obj -> System.out.println(obj));
     }
 }
