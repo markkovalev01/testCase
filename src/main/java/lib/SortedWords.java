@@ -36,13 +36,24 @@ public class SortedWords implements Comparable {
         return words.size();
     }
 
-
+    /**
+     *
+     * @param obj object for compare
+     *            objects are equals if this letters equals
+     * @return true if equals, false if not
+     */
     @Override
     public boolean equals(Object obj) {
         SortedWords sortedWords = (SortedWords) obj;
         return sortedWords.getLetter() == letter;
     }
 
+    /**
+     *
+     * @param o object for compare
+     *          objects compare by tis letters
+     * @return integer result of compare
+     */
     public int compareTo(Object o) {
         SortedWords sortedWords = (SortedWords) o;
         Integer let = (int) letter;
